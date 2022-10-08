@@ -1,31 +1,58 @@
 import React from 'react'
 
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="container">
+      <header className="profile-box">
+        <figure className="profile-img">
+          <div className="img">sdgfs</div>
+        </figure>
+        <section className="profile-info">
+          <div className="profile-action">
+            <p className="nick">KamilPM</p>
+            <button className="message">send a message</button>
+            <button className="follow">follow</button>
+          </div>
+          <div className="profile-numbers">
+            <p className="numbers">
+              Posts:<span className="bold">1,157</span>
+            </p>
+            <p className="numbers">
+              followers:<span className="bold">627K</span>
+            </p>
+            <p className="numbers">
+              Follows:<span className="bold">2,067</span>
+            </p>
+          </div>
+          <div className="name">Kamil Mróz</div>
+          <div className="profile-description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
+            perspiciatis consequuntur nihil quasi quidem nemo est, debitis et
+            alias omnis quam unde corrupti aperiam eveniet perferendis assumenda
+            dolorem velit amet.
+          </div>
+        </section>
+      </header>
+      <main className="posts">
+        <div className="post">
+          <img
+            src=""
+            alt=""
+          />
+        </div>
+        <div className="post">
+          <img
+            src=""
+            alt=""
+          />
+        </div>
+        <div className="post">
+          <img
+            src=""
+            alt=""
+          />
+        </div>
+      </main>
     </div>
   )
 }
