@@ -5,13 +5,13 @@ function App() {
     <div className="container">
       <header className="profile-box">
         <figure className="profile-img">
-          <div className="img">sdgfs</div>
+          <div className="img"></div>
         </figure>
         <section className="profile-info">
           <div className="profile-action">
             <p className="nick">KamilPM</p>
-            <button className="message">send a message</button>
-            <button className="follow">follow</button>
+            <button className="btn">send a message</button>
+            <button className="btn">follow</button>
           </div>
           <div className="profile-numbers">
             <p className="numbers">
@@ -34,6 +34,30 @@ function App() {
         </section>
       </header>
       <main className="posts">
+        <div className="post">
+          <img
+            src=""
+            alt=""
+          />
+        </div>
+        <div className="post">
+          <img
+            src=""
+            alt=""
+          />
+        </div>
+        <div className="post">
+          <img
+            src=""
+            alt=""
+          />
+        </div>
+        <div className="post">
+          <img
+            src=""
+            alt=""
+          />
+        </div>
         <div className="post">
           <img
             src=""
