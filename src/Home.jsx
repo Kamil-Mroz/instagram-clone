@@ -1,11 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useFetch } from './hooks/useFetch'
-import {
-  FaRegHeart,
-  FaRegComment,
-  FaRegBookmark,
-  FaRegPaperPlane,
-} from 'react-icons/fa'
+
+import { Card } from './Card'
 export const Home = () => {
   const posts = useFetch('https://jsonplaceholder.typicode.com/posts')
   const albums = useFetch('https://jsonplaceholder.typicode.com/albums')
@@ -24,5 +20,9 @@ export const Home = () => {
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, ratione quibusdam alias quas similique provident aperiam! Adipisci nobis deserunt porro facilis sit alias consequatur dolorum aliquam laudantium iusto? Iusto, quia?',
   })
 
-  return <div className="small-container"></div>
+  return (
+    <div className="small-container">
+      <Card photos={photos[0]} />
+    </div>
+  )
 }
