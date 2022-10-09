@@ -5,20 +5,21 @@ import {
   FaRegBookmark,
   FaRegPaperPlane,
 } from 'react-icons/fa'
-export const Card = ({ photos }) => {
+export const Card = ({ post }) => {
   return (
     <div className="card">
       <div className="header">
-        <div className="small-img-box">
-          <img
-            src="profile-small"
-            alt=""
-          />
-        </div>
-        <p className="nick-small">KamilPM</p>
+        <div
+          className="small-img-box"
+          style={{ backgroundColor: post?.userInfo?.color }}
+        ></div>
+        <p className="nick-small">{post?.userInfo?.username}</p>
       </div>
       <div className="img-box">
-        <img src={photos?.url} />
+        <img
+          src={post?.photo?.url}
+          alt={post?.title}
+        />
       </div>
       <div className="card-details">
         <div className="icons">
@@ -27,18 +28,19 @@ export const Card = ({ photos }) => {
           <FaRegPaperPlane className="icon-card" />
           <FaRegBookmark className="icon-card" />
         </div>
-        <p className="likes">
-          Likes: {Math.floor(Math.random() * (100000 - 1000) + 1000)}
-        </p>
+        <p className="likes">Likes: {post.likes}</p>
         <p>
-          <span className="nick-small">KamilPM</span> comment
+          <span className="nick-small">{post?.userInfo?.username}</span>{' '}
+          {post?.body}
         </p>
-        <p>
-          <span className="nick-small">KamilPM</span> other comment
-        </p>
-        <p>
-          <span className="nick-small">KamilPM</span> comment
-        </p>
+        {post?.comments?.map((comm) => (
+          <p key={comm?.id}>
+            <span className="nick-small">
+              {comm?.email?.slice(0, comm.email.indexOf('@'))}
+            </span>{' '}
+            {comm?.body}
+          </p>
+        ))}
       </div>
     </div>
   )

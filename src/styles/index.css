@@ -173,8 +173,8 @@ select {
 
 /*! Home */
 .small-container {
-  background-color: royalblue;
   display: grid;
+  gap: 1rem;
   grid-template-columns: min(100%, 47rem);
   justify-content: center;
 }
