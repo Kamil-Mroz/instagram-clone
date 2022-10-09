@@ -84,8 +84,6 @@ select {
 .posts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-  padding-top: 5rem;
-  border-top: 1px solid gray;
   gap: 2.8rem;
 }
 .post {
@@ -109,15 +107,7 @@ select {
   justify-content: center;
   align-items: center;
 }
-.img::before {
-  left: 0;
-  content: '';
-  inset: -1rem;
-  /* background-color: red; */
-  border-radius: 50%;
-  position: absolute;
-  z-index: -5;
-}
+
 .img {
   position: relative;
   width: 15rem;
@@ -135,8 +125,12 @@ select {
   .profile-box {
     flex-direction: column;
   }
-  .img {
-    width: 9rem;
+  .profile-img {
+    width: 50%;
+    margin-bottom: 3rem;
+  }
+  .profile-info {
+    width: 100%;
   }
 }
 
@@ -166,4 +160,15 @@ select {
 
 .name {
   font-weight: 500;
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-top: 1px solid gray;
+  margin-bottom: 2rem;
+}
+.icon {
+  font-size: 3.5rem;
+  color: grey;
 }
