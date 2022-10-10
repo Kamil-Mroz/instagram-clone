@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Post } from './Post'
 import { FaGripHorizontal } from 'react-icons/fa'
 import { useParams } from 'react-router-dom'
-
+import { DataContext } from './Data'
 export const Profile = () => {
+  const { users } = useContext(DataContext)
   const { id } = useParams()
+  console.log(users)
+  // ! make navigation and routers
+  //! get data from url and filter the data users
   return (
     <>
       <header className="profile-box">
         <div className="profile-img">
           <img
             className="img"
-            src="./assets/prof.png"
+            src=""
             alt="profile"
           />
         </div>
@@ -46,12 +50,12 @@ export const Profile = () => {
           <FaGripHorizontal className="icon" />
         </div>
         <div className="posts">
-          {posts?.map((post) => (
+          {/* {posts?.map((post) => (
             <Post
               key={post.id}
               post={post}
             />
-          ))}
+          ))} */}
         </div>
       </main>
     </>

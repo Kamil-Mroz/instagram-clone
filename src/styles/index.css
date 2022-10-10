@@ -220,6 +220,9 @@ select {
 .icon-card:nth-child(3) {
   margin-right: auto;
 }
+.icon-card.active {
+  color: red;
+}
 .icon-card {
   height: 4rem;
   width: 4rem;
@@ -240,4 +243,13 @@ select {
 .icons,
 .likes {
   margin-bottom: 0.8rem;
+}
+
+.show-more {
+  border: none;
+  background-color: transparent;
+  color: rgb(142, 142, 142);
+}
+.own-comment {
+  margin-bottom: 2rem;
 }
