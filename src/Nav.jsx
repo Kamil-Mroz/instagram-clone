@@ -1,6 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { FaRegHeart, FaRegPaperPlane, FaRegUser } from 'react-icons/fa'
+import {
+  FaRegHeart,
+  FaRegPaperPlane,
+  FaRegUser,
+  FaInstagram,
+} from 'react-icons/fa'
 import { GrHomeRounded, GrSearch } from 'react-icons/gr'
 
 export const Nav = () => {
@@ -11,7 +16,8 @@ export const Nav = () => {
         replace={true}
         className="logo"
       >
-        Instakamil
+        <FaInstagram className="nav-icons icon-hide" />
+        <span className="text-link">Instakamil</span>
       </NavLink>
 
       <nav className="navigation">
@@ -22,7 +28,8 @@ export const Nav = () => {
               replace={true}
               className="link"
             >
-              <GrHomeRounded className="nav-icons" /> Home page
+              <GrHomeRounded className="nav-icons" />{' '}
+              <span className="text-link">Home page</span>
             </NavLink>
           </li>
           <li className="nav-item">
@@ -32,7 +39,7 @@ export const Nav = () => {
               className="link"
             >
               <GrSearch className="nav-icons" />
-              Search
+              <span className="text-link">Search</span>
             </NavLink>
           </li>
           <li className="nav-item">
@@ -41,7 +48,8 @@ export const Nav = () => {
               replace={true}
               className="link"
             >
-              <FaRegPaperPlane className="nav-icons" /> Message
+              <FaRegPaperPlane className="nav-icons" />
+              <span className="text-link">Message</span>
             </NavLink>
           </li>
           <li className="nav-item">
@@ -50,7 +58,8 @@ export const Nav = () => {
               replace={true}
               className="link"
             >
-              <FaRegHeart className="nav-icons" /> Notifications
+              <FaRegHeart className="nav-icons" />
+              <span className="text-link">Notifications</span>
             </NavLink>
           </li>
           <li className="nav-item">
@@ -60,7 +69,7 @@ export const Nav = () => {
               className="link"
             >
               <FaRegUser className="nav-icons" />
-              Profile
+              <span className="text-link">Profile</span>
             </NavLink>
           </li>
         </ul>
