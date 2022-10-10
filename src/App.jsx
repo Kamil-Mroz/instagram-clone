@@ -16,11 +16,6 @@ function App() {
               index
               element={<Home />}
             />
-
-            <Route
-              path="/kamilpm"
-              element={<Profile />}
-            />
             <Route
               path="/:id"
               element={<Profile />}

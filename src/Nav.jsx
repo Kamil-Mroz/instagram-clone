@@ -12,7 +12,7 @@ export const Nav = () => {
   return (
     <aside className="sidebar">
       <NavLink
-        to="/kamilpm"
+        to="KamilPM"
         replace={true}
         className="logo"
       >
