@@ -253,3 +253,50 @@ select {
 .own-comment {
   margin-bottom: 2rem;
 }
+
+/* ! NAVIGATION */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.8rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  min-height: 100vh;
+  width: 33.5rem;
+}
+.logo {
+  padding: 2.5rem 0 1.6rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: #333;
+  text-decoration: none;
+}
+.link {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-weight: 500;
+  padding: 1rem 1rem;
+  border-radius: 100vmax;
+}
+.link:hover {
+  background-color: rgb(250, 250, 250);
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-icons {
+  font-size: 2.5rem;
+}

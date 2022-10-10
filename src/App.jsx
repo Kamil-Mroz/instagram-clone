@@ -11,19 +11,25 @@ function App() {
       <Nav />
       <div className="container">
         <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
-          <Route
-            path="/:id"
-            element={<Profile />}
-          />
+          <Route path="/">
+            <Route
+              index
+              element={<Home />}
+            />
+
+            <Route
+              path="/kamilpm"
+              element={<Profile />}
+            />
+            <Route
+              path="/:id"
+              element={<Profile />}
+            />
+          </Route>
         </Routes>
       </div>
     </DataProvider>
   )
 }
-//! change data
 
 export default App
