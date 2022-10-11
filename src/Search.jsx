@@ -18,10 +18,11 @@ export const Search = () => {
   return (
     <div className="search">
       <input
-        type="text"
+        type="search"
         onChange={() => onChange()}
         ref={inputRef}
         className="search-input"
+        placeholder="Search"
       />
       <div className="results">
         {usersSearch?.map((user) => (
@@ -40,7 +41,7 @@ export const Search = () => {
           </NavLink>
         ))}
         {usersSearch?.length === 0 && inputRef?.current?.value && (
-          <div className="header">Profile not found</div>
+          <div className="header error">Profile not found</div>
         )}
       </div>
     </div>
