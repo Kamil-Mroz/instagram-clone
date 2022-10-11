@@ -1,21 +1,26 @@
 import React, { useContext } from 'react'
 import { Post } from './Post'
 import { FaGripHorizontal } from 'react-icons/fa'
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import { DataContext } from './Data'
 export const Profile = () => {
   const { users } = useContext(DataContext)
   const { id } = useParams()
+
+  if (!users?.some((u) => u.username.toLowerCase() === id.toLocaleLowerCase()))
+    return <Navigate to="/" />
+
   const [user] = users?.filter(
-    (user) => user?.username?.toLowerCase() === id?.toLocaleLowerCase()
+    (user) => user.username.toLowerCase() === id.toLocaleLowerCase()
   )
+
   const posts = user?.photos.slice(0, 20)
 
   // ! make navigation and routers
   //! get data from url and filter the data users
   return (
     <>
-      {user ? (
+      {user && (
         <>
           <header className="profile-box">
             <div className="profile-img">
@@ -65,8 +70,6 @@ export const Profile = () => {
             </div>
           </main>
         </>
-      ) : (
-        `<Error/>`
       )}
     </>
   )

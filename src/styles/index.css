@@ -141,10 +141,10 @@ select {
 }
 .btn {
   padding: 0.5rem 0.9rem;
-  border: 1px solid gray;
+  border: 1px solid #dbdbdb;
+  background-color: transparent;
   font-weight: 500;
   border-radius: 4px;
-  text-overflow: ellipsis;
   font-size: 1.4rem;
 }
 .nick {
@@ -164,12 +164,12 @@ select {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  border-top: 1px solid gray;
+  border-top: 1px solid #dbdbdb;
   margin-bottom: 2rem;
 }
 .icon {
   font-size: 3.5rem;
-  color: grey;
+  color: rgb(185, 184, 184);
 }
 
 /*! Home */
@@ -329,6 +329,9 @@ select {
   }
 }
 @media only screen and (max-width: 48em) {
+  .profile-img {
+    justify-content: flex-start;
+  }
   .box {
     display: none;
   }
@@ -396,4 +399,14 @@ select {
 .error {
   font-weight: 500;
   letter-spacing: 1px;
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  min-height: 70vh;
 }

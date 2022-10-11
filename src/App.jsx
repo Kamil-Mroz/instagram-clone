@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { DataProvider } from './Data'
 import { Home } from './Home'
 import { Nav } from './Nav'
+import { NotFound } from './NotFound'
 import { Profile } from './Profile'
 import { Search } from './Search'
 
@@ -27,6 +28,14 @@ function App() {
               element={<Profile />}
             />
           </Route>
+          <Route
+            path="/notfound"
+            element={<NotFound />}
+          />
+          <Route
+            path="/*"
+            element={<NotFound />}
+          />
         </Routes>
       </div>
     </DataProvider>
