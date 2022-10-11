@@ -12,7 +12,7 @@ export const Nav = () => {
   return (
     <aside className="sidebar">
       <NavLink
-        to="KamilPM"
+        to="bret"
         replace={true}
         className="logo"
       >
@@ -34,7 +34,7 @@ export const Nav = () => {
           </li>
           <li className="nav-item">
             <NavLink
-              to="/"
+              to="search"
               replace={true}
               className="link"
             >

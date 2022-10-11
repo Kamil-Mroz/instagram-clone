@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFetch } from './hooks/useFetch'
 import { ColorGenerator } from './ColorGenerator'
 export const DataContext = React.createContext({})
@@ -16,6 +16,9 @@ export const DataProvider = ({ children }) => {
         ...u,
         color: color,
         photos: photos?.slice(500 * (u.id - 1), 500 * u.id),
+        postsNum: Math.floor(Math.random() * (1000 - 50) + 50),
+        followers: Math.floor(Math.random() * (1_000_000 - 200) + 200),
+        follows: Math.floor(Math.random() * (300 - 50) + 50),
       },
     ]
   }, [])
@@ -54,6 +57,14 @@ export const DataProvider = ({ children }) => {
     website: 'https://github.com/Kamil-Mroz',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, ratione quibusdam alias quas similique provident aperiam! Adipisci nobis deserunt porro facilis sit alias consequatur dolorum aliquam laudantium iusto? Iusto, quia?',
+    photos: [
+      { url: '' },
+      { url: '' },
+      { url: '' },
+      { url: '' },
+      { url: '' },
+      { url: '' },
+    ],
   })
 
   return (

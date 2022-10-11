@@ -1,11 +1,14 @@
 import React from 'react'
 
-export const Post = ({ url, title }) => {
+export const Post = ({ post }) => {
   return (
-    <div className="post">
+    <div
+      className="post"
+      key={post.id}
+    >
       <img
-        src={url}
-        alt={title}
+        src={post.url}
+        alt={post.title}
       />
     </div>
   )

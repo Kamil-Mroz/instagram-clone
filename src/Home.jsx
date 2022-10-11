@@ -1,7 +1,5 @@
 import React, { useContext } from 'react'
 import { DataContext } from './Data'
-import { useFetch } from './hooks/useFetch'
-import { ColorGenerator } from './ColorGenerator'
 import { Card } from './Card'
 export const Home = () => {
   const { posts } = useContext(DataContext)

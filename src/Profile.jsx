@@ -9,6 +9,7 @@ export const Profile = () => {
   const [user] = users?.filter(
     (user) => user?.username?.toLowerCase() === id?.toLocaleLowerCase()
   )
+  const posts = user?.photos.slice(0, 20)
 
   // ! make navigation and routers
   //! get data from url and filter the data users
@@ -18,36 +19,36 @@ export const Profile = () => {
         <>
           <header className="profile-box">
             <div className="profile-img">
-              <img
+              <div
                 className="img"
-                src=""
-                alt="profile"
-              />
+                style={{ backgroundColor: user.color }}
+              ></div>
             </div>
             <section className="profile-info">
               <div className="profile-action">
-                <p className="nick">KamilPM</p>
+                <p className="nick">{user.username}</p>
                 <button className="btn">Send a message</button>
                 <button className="btn">follow</button>
               </div>
               <div className="profile-numbers">
                 <p className="numbers">
-                  Posts:<span className="bold">1,157</span>
+                  Posts:<span className="bold">{user.postsNum}</span>
                 </p>
                 <p className="numbers">
-                  followers:<span className="bold">627K</span>
+                  followers:<span className="bold">{user.followers}</span>
                 </p>
                 <p className="numbers">
-                  Follows:<span className="bold">2,067</span>
+                  Follows:<span className="bold">{user.follows}</span>
                 </p>
               </div>
-              <div className="name">Kamil Mróz</div>
-              <div className="profile-description">
+              <p className="name">{user.name}</p>
+              <p className="email">{user.email}</p>
+              <p className="profile-description">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Tempora perspiciatis consequuntur nihil quasi quidem nemo est,
                 debitis et alias omnis quam unde corrupti aperiam eveniet
                 perferendis assumenda dolorem velit amet.
-              </div>
+              </p>
             </section>
           </header>
           <main>
@@ -55,12 +56,12 @@ export const Profile = () => {
               <FaGripHorizontal className="icon" />
             </div>
             <div className="posts">
-              {/* {posts?.map((post) => (
-            <Post
-              key={post.id}
-              post={post}
-              />
-            ))} */}
+              {posts?.map((post) => (
+                <Post
+                  post={post}
+                  key={post.id}
+                />
+              ))}
             </div>
           </main>
         </>
