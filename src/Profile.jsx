@@ -16,8 +16,6 @@ export const Profile = () => {
 
   const posts = user?.photos.slice(0, 20)
 
-  // ! make navigation and routers
-  //! get data from url and filter the data users
   return (
     <>
       {user && (

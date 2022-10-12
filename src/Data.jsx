@@ -8,6 +8,7 @@ export const DataProvider = ({ children }) => {
   const photos = useFetch('https://jsonplaceholder.typicode.com/photos')
   const comments = useFetch('https://jsonplaceholder.typicode.com/comments')
   const post = useFetch('https://jsonplaceholder.typicode.com/posts')
+  const projects = [{}, {}, {}, {}]
   const users = user?.reduce((cur, u) => {
     const color = `#${ColorGenerator()}`
     return [
@@ -57,14 +58,10 @@ export const DataProvider = ({ children }) => {
     website: 'https://github.com/Kamil-Mroz',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, ratione quibusdam alias quas similique provident aperiam! Adipisci nobis deserunt porro facilis sit alias consequatur dolorum aliquam laudantium iusto? Iusto, quia?',
-    photos: [
-      { url: '' },
-      { url: '' },
-      { url: '' },
-      { url: '' },
-      { url: '' },
-      { url: '' },
-    ],
+    photos: projects,
+    postsNum: projects.length,
+    followers: Math.floor(Math.random() * (1_000_000 - 200) + 200),
+    follows: Math.floor(Math.random() * (300 - 50) + 50),
   })
 
   return (
