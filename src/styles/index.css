@@ -378,15 +378,16 @@ select {
 .results {
   display: flex;
   flex-direction: column;
-  width: 33.5rem;
+  width: 100%;
   border-radius: 0.5rem;
   background-color: #fff;
 }
 .search-input {
-  width: 28rem;
+  width: 100%;
   padding: 1rem 2rem;
   border: none;
   border-radius: 0.5rem;
+  background-color: rgb(239, 239, 239);
 }
 .hover {
   padding: 0;
@@ -409,4 +410,10 @@ select {
   font-weight: 500;
   letter-spacing: 1px;
   min-height: 70vh;
+}
+
+/* ! message */
+
+.message-container {
+  display: flex;
 }

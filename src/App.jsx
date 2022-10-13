@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { DataProvider } from './Data'
 import { Home } from './Home'
+import { Message } from './Message'
 import { Nav } from './Nav'
 import { NotFound } from './NotFound'
 import { Profile } from './Profile'
@@ -29,11 +30,15 @@ function App() {
             />
           </Route>
           <Route
+            path="/message"
+            element={<Message />}
+          />
+          <Route
             path="/notfound"
             element={<NotFound />}
           />
           <Route
-            path="/*"
+            path="*"
             element={<NotFound />}
           />
         </Routes>

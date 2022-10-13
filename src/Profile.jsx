@@ -8,7 +8,12 @@ export const Profile = () => {
   const { id } = useParams()
 
   if (!users?.some((u) => u.username.toLowerCase() === id.toLocaleLowerCase()))
-    return <Navigate to="/" />
+    return (
+      <Navigate
+        to="/"
+        replace={true}
+      />
+    )
 
   const [user] = users?.filter(
     (user) => user.username.toLowerCase() === id.toLocaleLowerCase()
