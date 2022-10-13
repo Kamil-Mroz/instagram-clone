@@ -446,7 +446,7 @@ select {
 }
 
 .message-input {
-  width: min(100% - 1.5rem, 50rem);
+  width: min(100% - 2rem, 50rem);
   border-radius: 0.5rem;
   border: 1px solid #dbdbdb;
   padding: 1rem 2rem;
@@ -455,7 +455,7 @@ select {
 
 @media only screen and (max-width: 46em) {
   .message-container {
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: min-content 1fr;
   }
 
   .link--message {
@@ -463,5 +463,8 @@ select {
   }
   .container {
     padding: 3rem 2rem 6rem;
+  }
+  .message-input {
+    padding: 0.5rem 1rem;
   }
 }
