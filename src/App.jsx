@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { DataProvider } from './Data'
 import { Home } from './Home'
 import { Message } from './Message'
+import { MessageForm } from './MessageForm'
 import { Nav } from './Nav'
 import { NotFound } from './NotFound'
 import { Profile } from './Profile'
@@ -35,8 +36,8 @@ function App() {
           >
             <Route
               path=":user"
-              element={'hello'}
-            />
+              element={<MessageForm />}
+            ></Route>
           </Route>
           <Route
             path="/notfound"

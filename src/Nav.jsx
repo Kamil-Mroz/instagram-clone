@@ -44,7 +44,7 @@ export const Nav = () => {
           </li>
           <li className="nav-item">
             <Link
-              to="/message"
+              to="message"
               replace={true}
               className="link"
             >
@@ -64,7 +64,7 @@ export const Nav = () => {
           </li>
           <li className="nav-item">
             <Link
-              to="/kamilpm"
+              to="kamilpm"
               replace={true}
               className="link"
             >

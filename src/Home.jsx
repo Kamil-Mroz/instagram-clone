@@ -3,9 +3,10 @@ import { DataContext } from './Data'
 import { Card } from './Card'
 export const Home = () => {
   const { posts } = useContext(DataContext)
+  const newPosts = posts.slice(0, 5)
   return (
     <div className="small-container">
-      {posts?.map((post) => (
+      {newPosts?.map((post) => (
         <Card
           key={post.id}
           post={post}

@@ -417,3 +417,12 @@ select {
 .message-container {
   display: flex;
 }
+
+.link--message {
+  border-radius: 0.5rem;
+}
+
+.message-form {
+  display: flex;
+  flex-direction: column;
+}

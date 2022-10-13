@@ -48,7 +48,7 @@ export const DataProvider = ({ children }) => {
     }, [])
     .sort(() => 0.5 - Math.random())
 
-  users?.push({
+  users?.unshift({
     id: 11,
     name: 'Kamil Mróz',
     username: 'KamilPM',
