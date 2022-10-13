@@ -21,18 +21,23 @@ function App() {
               element={<Home />}
             />
             <Route
-              path="/search"
+              path="search"
               element={<Search />}
             />
             <Route
-              path="/:id"
+              path=":id"
               element={<Profile />}
             />
           </Route>
           <Route
             path="/message"
             element={<Message />}
-          />
+          >
+            <Route
+              path=":user"
+              element={'hello'}
+            />
+          </Route>
           <Route
             path="/notfound"
             element={<NotFound />}
