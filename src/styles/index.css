@@ -435,8 +435,21 @@ select {
 .message-block {
   border: 1px solid #dbdbdb;
 }
+
+.users-block {
+  height: 94vh;
+  overflow-y: scroll;
+}
+
 .message-block {
   border-left: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-wrapper {
+  width: 100%;
 }
 .message-to {
   padding: 1rem;

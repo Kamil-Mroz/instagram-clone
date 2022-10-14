@@ -6,6 +6,7 @@ import {
   FaRegPaperPlane,
   FaBookmark,
 } from 'react-icons/fa'
+import { NavLink } from 'react-router-dom'
 
 export const Card = ({ post }) => {
   const [isShowMore, setIsShowMore] = useState(false)
@@ -19,7 +20,12 @@ export const Card = ({ post }) => {
           className="small-img-box"
           style={{ backgroundColor: post?.userInfo?.color }}
         ></div>
-        <p className="nick-small">{post?.userInfo?.username}</p>
+        <NavLink
+          to={`/${post?.userInfo?.username.toLowerCase()}`}
+          className="link"
+        >
+          <p className="nick-small">{post?.userInfo?.username}</p>
+        </NavLink>
       </div>
       <div className="img-box">
         <img

@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState, useEffect } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { DataContext } from './Data'
 import { NavLink } from 'react-router-dom'
 export const Search = () => {
