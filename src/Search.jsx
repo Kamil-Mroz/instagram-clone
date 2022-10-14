@@ -24,25 +24,28 @@ export const Search = () => {
         className="search-input"
         placeholder="Search"
       />
-      <div className="results">
-        {usersSearch?.map((user) => (
-          <NavLink
-            to={`/${user.username.toLowerCase()}`}
-            key={user.id}
-            className="link hover"
-          >
-            <div className="header">
-              <div
-                className="small-img-box"
-                style={{ backgroundColor: user.color }}
-              />
-              <p className="nick-small">{user.username}</p>
-            </div>
-          </NavLink>
-        ))}
-        {usersSearch?.length === 0 && inputRef?.current?.value && (
-          <div className="header error">Profile not found</div>
-        )}
+      <div className="results-container">
+        <div className="results">
+          {usersSearch?.map((user) => (
+            <NavLink
+              to={`/${user.username.toLowerCase()}`}
+              key={user.id}
+              className="link hover"
+            >
+              <div className="header">
+                <div
+                  className="small-img-box"
+                  style={{ backgroundColor: user.color }}
+                />
+                <p className="nick-small">{user.username}</p>
+              </div>
+            </NavLink>
+          ))}
+          {usersSearch?.length === 0 && inputRef?.current?.value && (
+            <div className="header error">Profile not found</div>
+          )}
+        </div>
+        <div className="square" />
       </div>
     </div>
   )

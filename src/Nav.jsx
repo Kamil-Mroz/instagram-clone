@@ -12,7 +12,7 @@ export const Nav = () => {
   return (
     <aside className="sidebar">
       <Link
-        to="bret"
+        to="/"
         replace={true}
         className="logo"
       >
@@ -64,7 +64,7 @@ export const Nav = () => {
           </li>
           <li className="nav-item">
             <Link
-              to="kamilpm"
+              to="bret"
               replace={true}
               className="link"
             >
