@@ -40,7 +40,12 @@ export const Card = ({ post }) => {
             onClick={() => setIsLiked((prev) => !prev)}
           />
           <FaRegComment className="icon-card" />
-          <FaRegPaperPlane className="icon-card" />
+          <NavLink
+            to={`/message/${post?.userInfo?.username.toLowerCase()}`}
+            className="txt-decoration-none"
+          >
+            <FaRegPaperPlane className="icon-card" />
+          </NavLink>
           {isBooked ? (
             <FaBookmark
               className="icon-card"

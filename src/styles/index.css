@@ -504,3 +504,8 @@ select {
     padding: 0.5rem 1rem;
   }
 }
+.txt-decoration-none {
+  text-decoration: none;
+  color: currentColor;
+  line-height: 0;
+}
