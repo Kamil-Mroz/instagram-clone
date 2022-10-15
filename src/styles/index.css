@@ -181,7 +181,7 @@ main {
 .profile-action {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -193,6 +193,14 @@ main {
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
+}
+.numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.bold {
+  font-weight: 500;
 }
 
 .name {

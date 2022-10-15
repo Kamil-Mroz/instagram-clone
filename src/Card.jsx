@@ -7,6 +7,7 @@ import {
   FaBookmark,
 } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
+import { useNumbers } from './hooks/useNumbers'
 
 export const Card = ({ post }) => {
   const [isShowMore, setIsShowMore] = useState(false)
@@ -58,7 +59,9 @@ export const Card = ({ post }) => {
             />
           )}
         </div>
-        <p className="likes">Likes: {isLiked ? post.likes + 1 : post.likes}</p>
+        <p className="likes">
+          Likes: {useNumbers(isLiked ? post.likes + 1 : post.likes)}
+        </p>
         <p className="own-comment">
           <span className="nick-small">{post?.userInfo?.username}</span>{' '}
           {post?.title}

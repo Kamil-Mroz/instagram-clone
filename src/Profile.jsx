@@ -5,6 +5,7 @@ import { useParams, Navigate } from 'react-router-dom'
 import { DataContext } from './Data'
 import { NavLink } from 'react-router-dom'
 import { FollowBtn } from './FollowBtn'
+import { useNumbers } from './hooks/useNumbers'
 export const Profile = () => {
   const { users } = useContext(DataContext)
   const { id } = useParams()
@@ -50,10 +51,12 @@ export const Profile = () => {
                   Posts:<span className="bold">{user.postsNum}</span>
                 </p>
                 <p className="numbers">
-                  followers:<span className="bold">{user.followers}</span>
+                  followers:
+                  <span className="bold">{useNumbers(user.followers)}</span>
                 </p>
                 <p className="numbers">
-                  Follows:<span className="bold">{user.follows}</span>
+                  Follows:
+                  <span className="bold">{useNumbers(user.follows)}</span>
                 </p>
               </div>
               <p className="name">{user.name}</p>
