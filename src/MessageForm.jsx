@@ -1,13 +1,14 @@
 import React, { useContext, useRef, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { DataContext } from './Data'
+import { NavLink } from 'react-router-dom'
 export const MessageForm = () => {
   const inputRef = useRef(null)
   const textareaRef = useRef(null)
   const { users } = useContext(DataContext)
   const { user: id } = useParams()
   const [user] = users?.filter(
-    (user) => user.username.toLowerCase() === id.toLocaleLowerCase()
+    (user) => user?.username.toLowerCase() === id.toLocaleLowerCase()
   )
   useEffect(() => {
     inputRef.current.value = ''
@@ -19,7 +20,14 @@ export const MessageForm = () => {
 
   return (
     <div className="form-wrapper">
-      <div className="message-to">{user?.username}</div>
+      <div className="message-to">
+        <NavLink
+          to={`/${user?.username.toLowerCase()}`}
+          className="txt-decoration-none"
+        >
+          {user?.username}
+        </NavLink>
+      </div>
       <form
         className="message-form"
         onSubmit={onSubmit}
@@ -39,7 +47,7 @@ export const MessageForm = () => {
           className="message-input"
           ref={textareaRef}
         ></textarea>
-        <button className="btn">Send</button>
+        <button className="form-button">Send</button>
       </form>
     </div>
   )

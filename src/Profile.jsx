@@ -3,6 +3,8 @@ import { Post } from './Post'
 import { FaGripHorizontal } from 'react-icons/fa'
 import { useParams, Navigate } from 'react-router-dom'
 import { DataContext } from './Data'
+import { NavLink } from 'react-router-dom'
+import { FollowBtn } from './FollowBtn'
 export const Profile = () => {
   const { users } = useContext(DataContext)
   const { id } = useParams()
@@ -35,8 +37,13 @@ export const Profile = () => {
             <section className="profile-info">
               <div className="profile-action">
                 <p className="nick">{user.username}</p>
-                <button className="btn">Send a message</button>
-                <button className="btn">follow</button>
+                <NavLink
+                  to={`/message/${user.username.toLowerCase()}`}
+                  className="txt-decoration-none btn"
+                >
+                  Send a message
+                </NavLink>
+                <FollowBtn />
               </div>
               <div className="profile-numbers">
                 <p className="numbers">

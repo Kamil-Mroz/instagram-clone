@@ -8,10 +8,10 @@ export const Message = () => {
   return (
     <div className="message-container">
       <div className="users-block">
-        {users.map((u) => (
+        {users?.map((u) => (
           <Link
-            to={u.username.toLowerCase()}
-            key={u.id}
+            to={u?.username?.toLowerCase()}
+            key={u?.id}
             className="link link--message"
           >
             <UserMessage user={u} />
