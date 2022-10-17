@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { Post } from './Post'
 import { FaGripHorizontal } from 'react-icons/fa'
 import { useParams, Navigate } from 'react-router-dom'
@@ -6,10 +6,20 @@ import { DataContext } from './Data'
 import { NavLink } from 'react-router-dom'
 import { FollowBtn } from './FollowBtn'
 import { useNumbers } from './hooks/useNumbers'
+import ReactModal from 'react-modal'
+
+ReactModal.setAppElement('#root')
 export const Profile = () => {
   const { users } = useContext(DataContext)
   const { id } = useParams()
-
+  const dataRef = useRef(null)
+  const [isOpen, setIsOpen] = useState(false)
+  const open = () => {
+    setIsOpen(true)
+  }
+  const close = () => {
+    setIsOpen(false)
+  }
   if (!users?.some((u) => u.username.toLowerCase() === id.toLocaleLowerCase()))
     return (
       <Navigate
@@ -78,10 +88,36 @@ export const Profile = () => {
                 <Post
                   post={post}
                   key={post.id}
+                  dataRef={dataRef}
+                  open={open}
                 />
               ))}
             </div>
           </main>
+          <ReactModal
+            isOpen={isOpen}
+            onRequestClose={close}
+            contentLabel="Post"
+            shouldCloseOnOverlayClick={true}
+            shouldCloseOnEsc={true}
+            style={{
+              overlay: {
+                backgroundColor: 'rgba(0, 0, 0, .75)',
+                zIndex: '10',
+                display: 'flex',
+              },
+              content: {
+                zIndex: '10',
+                height: '50%',
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                translate: '-50% -50%',
+                display: 'gird',
+                gridTemplateColumns: '1fr 525px',
+              },
+            }}
+          ></ReactModal>
         </>
       )}
     </>
