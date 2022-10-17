@@ -167,7 +167,7 @@ main {
     width: 100%;
   }
   .container {
-    padding: 3rem 0 6rem;
+    padding: 0 0 6rem;
   }
   .profile-box {
     padding-inline: 2rem;
@@ -264,9 +264,7 @@ main {
   gap: 1rem;
   line-height: 0;
 }
-.icon-card:nth-child(3) {
-  margin-right: auto;
-}
+
 .icon-card.active {
   color: red;
 }
@@ -278,6 +276,9 @@ main {
 }
 .icon-card:hover {
   opacity: 0.5;
+}
+.icon-card:last-child {
+  margin-left: auto;
 }
 .likes {
   font-weight: 500;
@@ -535,52 +536,28 @@ main {
 .form-button {
   display: block;
 }
-@media only screen and (max-width: 46em) {
-  .btn {
-    align-self: flex-start;
-    padding-block: 1rem;
-  }
-  .profile-action {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .message-container {
-    grid-template-columns: min-content 1fr;
-  }
-  .users-block {
-    height: 85vh;
-    overflow-y: scroll;
-  }
-
-  .link--message {
-    padding-left: 0;
-  }
-  .message-input {
-    padding: 0.5rem 1rem;
-  }
-}
 .txt-decoration-none {
   text-decoration: none;
   color: currentColor;
 }
 
-.Modal {
+.modal {
+  overflow: hidden;
   background-color: #333;
   display: block;
   background-color: #fff;
   height: 90vh;
-  width: 70vw;
+  width: 80vw;
   position: absolute;
   z-index: 11;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
   display: grid;
-  grid-template-columns: minmax(30rem, 1fr) minmax(40.5rem, 50rem);
+  grid-template-columns: minmax(20rem, 1fr) minmax(40.5rem, 50rem);
   border-radius: 0.5rem;
-  border: none;
 }
-.Overlay {
+.overlay {
   display: block;
   background-color: rgba(0, 0, 0, 0.75);
   width: 100%;
@@ -609,9 +586,50 @@ main {
   padding: 0 2rem 2rem 2rem;
 }
 .comments > .header {
-  top: 0;
+  top: 1px;
   position: sticky;
   border-bottom: 1px solid #dbdbdb;
   background-color: #fff;
   width: 100%;
+}
+
+@media only screen and (max-width: 46em) {
+  .btn {
+    align-self: flex-start;
+    padding-block: 1rem;
+  }
+  .profile-action {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .message-container {
+    grid-template-columns: min-content 1fr;
+  }
+  .users-block {
+    height: 85vh;
+    overflow-y: scroll;
+  }
+
+  .link--message {
+    padding-left: 0;
+  }
+  .message-input {
+    padding: 0.5rem 1rem;
+  }
+
+  .modal {
+    height: 60vh;
+    width: 65vw;
+    grid-template-columns: 1fr;
+  }
+  .comments > .comment {
+    display: none;
+  }
+  .comments {
+    overflow-y: hidden;
+  }
+  .profile-box,
+  .search {
+    padding-top: 3rem;
+  }
 }

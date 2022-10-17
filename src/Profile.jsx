@@ -14,7 +14,6 @@ export const Profile = () => {
   const { users } = useContext(DataContext)
   const { id } = useParams()
   const [isOpen, setIsOpen] = useState(false)
-  const [isShowMore, setIsShowMore] = useState(false)
   const [data, setData] = useState({})
 
   const open = (data) => {
@@ -24,7 +23,6 @@ export const Profile = () => {
   const close = () => {
     setIsOpen(false)
     setData({})
-    setIsShowMore(false)
   }
   if (!users?.some((u) => u.username.toLowerCase() === id.toLocaleLowerCase()))
     return (
@@ -39,7 +37,6 @@ export const Profile = () => {
   )
 
   const posts = user?.photos.slice(0, 20)
-  const comments = user?.comments.slice(0, isShowMore ? -1 : 3)
 
   return (
     <>
@@ -108,8 +105,8 @@ export const Profile = () => {
             contentLabel="Post"
             shouldCloseOnOverlayClick={true}
             shouldCloseOnEsc={true}
-            className="Modal"
-            overlayClassName="Overlay"
+            className="modal"
+            overlayClassName="overlay"
             preventScroll={true}
           >
             <figure className="img-modal-box">
@@ -133,7 +130,7 @@ export const Profile = () => {
                   <p className="nick-small">{user?.username}</p>
                 </NavLink>
               </div>
-              {comments?.map((comm) => (
+              {user?.comments?.map((comm) => (
                 <p
                   key={comm?.id}
                   className="comment"
@@ -144,14 +141,6 @@ export const Profile = () => {
                   {comm?.body}
                 </p>
               ))}
-              {!isShowMore && (
-                <button
-                  onClick={() => setIsShowMore((prev) => !prev)}
-                  className="show-more"
-                >
-                  show more comments
-                </button>
-              )}
             </article>
           </ReactModal>
         </>
