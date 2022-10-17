@@ -20,6 +20,10 @@ export const DataProvider = ({ children }) => {
         postsNum: Math.floor(Math.random() * (1000 - 50) + 50),
         followers: Math.floor(Math.random() * (1_000_000 - 200) + 200),
         follows: Math.floor(Math.random() * (300 - 50) + 50),
+        comments: comments?.slice(
+          Math.floor(Math.random() * 5),
+          Math.floor(Math.random() * (20 - 5) + 5)
+        ),
       },
     ]
   }, [])

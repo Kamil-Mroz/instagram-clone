@@ -7,6 +7,7 @@ export const Home = () => {
   const { posts } = useContext(DataContext)
 
   const newPosts = posts?.slice(0, amount)
+
   const postsContainerRef = useRef()
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {

@@ -5,7 +5,7 @@ export const Post = ({ post, open }) => {
     <div
       className="post"
       key={post.id}
-      onClick={open}
+      onClick={() => open(post)}
     >
       <img
         src={post.url}

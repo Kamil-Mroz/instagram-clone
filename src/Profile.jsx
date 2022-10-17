@@ -9,16 +9,20 @@ import { useNumbers } from './hooks/useNumbers'
 import ReactModal from 'react-modal'
 
 ReactModal.setAppElement('#root')
+
 export const Profile = () => {
   const { users } = useContext(DataContext)
   const { id } = useParams()
-  const dataRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
-  const open = () => {
+  const [data, setData] = useState({})
+  console.log(data)
+  const open = (data) => {
     setIsOpen(true)
+    setData(data)
   }
   const close = () => {
     setIsOpen(false)
+    setData({})
   }
   if (!users?.some((u) => u.username.toLowerCase() === id.toLocaleLowerCase()))
     return (
@@ -48,13 +52,15 @@ export const Profile = () => {
             <section className="profile-info">
               <div className="profile-action">
                 <p className="nick">{user.username}</p>
-                <NavLink
-                  to={`/message/${user.username.toLowerCase()}`}
-                  className="txt-decoration-none btn"
-                >
-                  Send a message
-                </NavLink>
-                <FollowBtn />
+                <>
+                  <NavLink
+                    to={`/message/${user.username.toLowerCase()}`}
+                    className="txt-decoration-none btn"
+                  >
+                    Send a message
+                  </NavLink>
+                  <FollowBtn />
+                </>
               </div>
               <div className="profile-numbers">
                 <p className="numbers">
@@ -88,7 +94,6 @@ export const Profile = () => {
                 <Post
                   post={post}
                   key={post.id}
-                  dataRef={dataRef}
                   open={open}
                 />
               ))}
@@ -100,24 +105,32 @@ export const Profile = () => {
             contentLabel="Post"
             shouldCloseOnOverlayClick={true}
             shouldCloseOnEsc={true}
-            style={{
-              overlay: {
-                backgroundColor: 'rgba(0, 0, 0, .75)',
-                zIndex: '10',
-                display: 'flex',
-              },
-              content: {
-                zIndex: '10',
-                height: '50%',
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                translate: '-50% -50%',
-                display: 'gird',
-                gridTemplateColumns: '1fr 525px',
-              },
-            }}
-          ></ReactModal>
+            className="Modal"
+            overlayClassName="Overlay"
+            preventScroll={true}
+          >
+            <figure className="img-modal-box">
+              <img
+                src={data?.url}
+                alt={data?.title}
+                className="img-modal"
+              />
+            </figure>
+            <article className="comments">
+              <div className="header">
+                <div
+                  className="small-img-box"
+                  style={{ backgroundColor: user?.color }}
+                ></div>
+                <NavLink
+                  to={`/${user?.username?.toLowerCase()}`}
+                  className="link"
+                >
+                  <p className="nick-small">{user?.username}</p>
+                </NavLink>
+              </div>
+            </article>
+          </ReactModal>
         </>
       )}
     </>

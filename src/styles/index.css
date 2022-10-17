@@ -114,7 +114,6 @@ main {
 .posts {
   width: 100%;
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); */
   grid-template-columns: repeat(3, 1fr);
   gap: 2.8rem;
 }
@@ -537,6 +536,14 @@ main {
   display: block;
 }
 @media only screen and (max-width: 46em) {
+  .btn {
+    align-self: flex-start;
+    padding-block: 1rem;
+  }
+  .profile-action {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .message-container {
     grid-template-columns: min-content 1fr;
   }
@@ -555,4 +562,42 @@ main {
 .txt-decoration-none {
   text-decoration: none;
   color: currentColor;
+}
+
+.Modal {
+  background-color: #333;
+  display: block;
+  background-color: #fff;
+  height: calc(100% - 4rem);
+  position: absolute;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: grid;
+  grid-template-columns: 1fr clamp(40.5rem, 100%, 50rem);
+  border-radius: 0.5rem;
+  border: none;
+}
+.Overlay {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+.img-modal-box {
+  background-color: rgb(14, 14, 14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-modal {
+  display: block;
+  object-fit: cover;
+}
+.comments {
+  z-index: 13;
 }
