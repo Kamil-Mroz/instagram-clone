@@ -10,6 +10,8 @@ import { Profile } from './Profile'
 import { Search } from './Search'
 
 function App() {
+  window.scrollTo(0, 0)
+
   return (
     <DataProvider>
       <Nav />

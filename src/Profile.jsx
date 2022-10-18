@@ -52,6 +52,7 @@ export const Profile = () => {
   const postsRef = useRef()
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0]
@@ -62,7 +63,7 @@ export const Profile = () => {
           })
         }
       },
-      { rootMargin: '200px' }
+      { rootMargin: '100px' }
     )
     observer.observe(postsRef.current)
   }, [])

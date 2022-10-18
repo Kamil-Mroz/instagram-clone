@@ -10,6 +10,7 @@ export const Home = () => {
 
   const postsContainerRef = useRef()
   useEffect(() => {
+    window.scrollTo(0, 0)
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0]
 
