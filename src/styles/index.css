@@ -599,11 +599,11 @@ main {
   background-color: #fff;
   margin-bottom: 0;
 }
-.icon-card:last-child {
+.icons-modal > .icons > .icon-card:last-child {
   margin-left: 0;
 }
 .comments > .comment:nth-last-child(2) {
-  margin-bottom: 6rem;
+  margin-bottom: 7rem;
 }
 
 @media only screen and (max-width: 46em) {

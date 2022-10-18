@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Post } from './Post'
 import { FaGripHorizontal } from 'react-icons/fa'
 import { useParams, Navigate } from 'react-router-dom'
@@ -18,6 +18,8 @@ import {
 ReactModal.setAppElement('#root')
 
 export const Profile = () => {
+  const POSTS_ON_RENDER = 6
+  const [amount, setAmount] = useState(POSTS_ON_RENDER)
   const [isBooked, setIsBooked] = useState(false)
   const { users } = useContext(DataContext)
   const { id } = useParams()
@@ -45,7 +47,25 @@ export const Profile = () => {
     (user) => user.username.toLowerCase() === id.toLocaleLowerCase()
   )
 
-  const posts = user?.photos.slice(0, 20)
+  const posts = user?.photos?.slice(0, amount)
+
+  const postsRef = useRef()
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        if (entry.isIntersecting) {
+          console.log('ok')
+          setAmount((prev) => {
+            return prev + POSTS_ON_RENDER
+          })
+        }
+      },
+      { rootMargin: '200px' }
+    )
+    observer.observe(postsRef.current)
+  }, [])
 
   return (
     <>
@@ -106,8 +126,10 @@ export const Profile = () => {
                   open={open}
                 />
               ))}
+              <div ref={postsRef}></div>
             </div>
           </main>
+
           <ReactModal
             isOpen={isOpen}
             onRequestClose={close}
