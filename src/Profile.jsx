@@ -7,13 +7,22 @@ import { NavLink } from 'react-router-dom'
 import { FollowBtn } from './FollowBtn'
 import { useNumbers } from './hooks/useNumbers'
 import ReactModal from 'react-modal'
+import {
+  FaRegHeart,
+  FaRegComment,
+  FaRegBookmark,
+  FaRegPaperPlane,
+  FaBookmark,
+} from 'react-icons/fa'
 
 ReactModal.setAppElement('#root')
 
 export const Profile = () => {
+  const [isBooked, setIsBooked] = useState(false)
   const { users } = useContext(DataContext)
   const { id } = useParams()
   const [isOpen, setIsOpen] = useState(false)
+  const [isLiked, setIsLiked] = useState(false)
   const [data, setData] = useState({})
 
   const open = (data) => {
@@ -130,6 +139,7 @@ export const Profile = () => {
                   <p className="nick-small">{user?.username}</p>
                 </NavLink>
               </div>
+
               {user?.comments?.map((comm) => (
                 <p
                   key={comm?.id}
@@ -141,6 +151,36 @@ export const Profile = () => {
                   {comm?.body}
                 </p>
               ))}
+              <div className="icons-modal">
+                <div className="icons ">
+                  <FaRegHeart
+                    className={`icon-card ${isLiked && 'active'}`}
+                    onClick={() => setIsLiked((prev) => !prev)}
+                  />
+                  <FaRegComment className="icon-card" />
+                  <NavLink
+                    to={`/message/${user?.username.toLowerCase()}`}
+                    className="txt-decoration-none"
+                  >
+                    <FaRegPaperPlane className="icon-card" />
+                  </NavLink>
+                  {isBooked ? (
+                    <FaBookmark
+                      className="icon-card"
+                      onClick={() => setIsBooked((prev) => !prev)}
+                    />
+                  ) : (
+                    <FaRegBookmark
+                      className="icon-card"
+                      onClick={() => setIsBooked((prev) => !prev)}
+                    />
+                  )}
+                </div>
+
+                <p className="likes">
+                  Likes: {useNumbers(isLiked ? user.likes + 1 : user.likes)}
+                </p>
+              </div>
             </article>
           </ReactModal>
         </>

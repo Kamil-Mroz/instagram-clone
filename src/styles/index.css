@@ -554,7 +554,7 @@ main {
   left: 50%;
   translate: -50% -50%;
   display: grid;
-  grid-template-columns: minmax(20rem, 1fr) minmax(40.5rem, 50rem);
+  grid-template-columns: minmax(30rem, 1fr) minmax(35rem, 50rem);
   border-radius: 0.5rem;
 }
 .overlay {
@@ -592,6 +592,19 @@ main {
   background-color: #fff;
   width: 100%;
 }
+.icons-modal {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+  margin-bottom: 0;
+}
+.icon-card:last-child {
+  margin-left: 0;
+}
+.comments > .comment:nth-last-child(2) {
+  margin-bottom: 6rem;
+}
 
 @media only screen and (max-width: 46em) {
   .btn {
@@ -618,9 +631,10 @@ main {
   }
 
   .modal {
-    height: 60vh;
-    width: 65vw;
+    height: 80vh;
+    width: 75vw;
     grid-template-columns: 1fr;
+    position: relative;
   }
   .comments > .comment {
     display: none;
@@ -631,5 +645,11 @@ main {
   .profile-box,
   .search {
     padding-top: 3rem;
+  }
+  .comments > .header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
   }
 }

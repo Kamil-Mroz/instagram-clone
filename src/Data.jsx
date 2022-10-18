@@ -24,6 +24,7 @@ export const DataProvider = ({ children }) => {
           Math.floor(Math.random() * 5),
           Math.floor(Math.random() * (20 - 5) + 5)
         ),
+        likes: Math.floor(Math.random() * (100000 - 1000) + 1000),
       },
     ]
   }, [])
