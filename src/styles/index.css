@@ -606,7 +606,7 @@ main {
 }
 
 .chat {
-  height: 20vh;
+  height: 60vh;
   width: 100%;
   border-bottom: 1px solid #dbdbdb;
   overflow-y: scroll;
@@ -701,4 +701,5 @@ main {
   color: #fff;
   border-radius: 0.5rem;
   align-self: flex-end;
+  flex-wrap: wrap;
 }
