@@ -1,32 +1,32 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import { DataContext } from './Data'
 import { NavLink } from 'react-router-dom'
 export const Search = () => {
-  const [usersSearch, setUsersSearch] = useState([])
-  const inputRef = useRef()
+  const [query, setQuery] = useState()
+
   const { users } = useContext(DataContext)
 
-  const onChange = () => {
-    const value = inputRef.current.value.toLowerCase().trim()
-
-    const showUsers = users?.filter((u) =>
-      u.username.toLowerCase().includes(value)
-    )
-    setUsersSearch(showUsers)
+  const onChange = (e) => {
+    const value = e.target.value?.toLowerCase().trim()
+    setQuery(value)
   }
+
+  const showUsers = useMemo(
+    () => users?.filter((u) => u.username.toLowerCase().includes(query)),
+    [users, query]
+  )
 
   return (
     <div className="search">
       <input
         type="search"
-        onChange={() => onChange()}
-        ref={inputRef}
+        onChange={onChange}
         className="search-input"
         placeholder="Search"
       />
       <div className="results-container">
         <div className="results">
-          {usersSearch?.map((user) => (
+          {showUsers?.map((user) => (
             <NavLink
               to={`/${user.username.toLowerCase()}`}
               key={user.id}
@@ -41,7 +41,7 @@ export const Search = () => {
               </div>
             </NavLink>
           ))}
-          {usersSearch?.length === 0 && inputRef?.current?.value && (
+          {showUsers?.length === 0 && query && (
             <div className="header error">Profile not found</div>
           )}
         </div>

@@ -57,7 +57,6 @@ export const Profile = () => {
       (entries) => {
         const entry = entries[0]
         if (entry.isIntersecting) {
-          console.log('ok')
           setAmount((prev) => {
             return prev + POSTS_ON_RENDER
           })
