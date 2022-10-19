@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { Chat } from './Chat'
 import { DataProvider } from './Data'
 import { Home } from './Home'
 import { Message } from './Message'
@@ -38,7 +39,7 @@ function App() {
           >
             <Route
               path=":user"
-              element={<MessageForm />}
+              element={<Chat />}
             ></Route>
           </Route>
           <Route

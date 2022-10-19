@@ -521,7 +521,6 @@ main {
   font-size: 1.8rem;
   text-align: center;
   border-bottom: 1px solid #dbdbdb;
-  margin-bottom: 2rem;
 }
 
 .message-input,
@@ -652,4 +651,39 @@ main {
     top: 0;
     left: 0;
   }
+}
+
+.chat {
+  height: 60vh;
+  width: 100%;
+  border-bottom: 1px solid #dbdbdb;
+  overflow-y: scroll;
+}
+.chat-form {
+  display: flex;
+}
+.input-group {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.chat-input {
+  background-color: royalblue;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  resize: none;
+}
+
+.chat-submit {
+  display: flex;
+  align-items: center;
+  border: none;
+  font-size: 3rem;
+  padding: 1rem;
+  color: #333;
+  background-color: transparent;
+  border-left: 1px solid #dbdbdb;
 }
