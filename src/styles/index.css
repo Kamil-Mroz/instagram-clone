@@ -605,6 +605,44 @@ main {
   margin-bottom: 7rem;
 }
 
+.chat {
+  height: 20vh;
+  width: 100%;
+  border-bottom: 1px solid #dbdbdb;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.chat-form {
+  display: flex;
+}
+.input-group {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.chat-input {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  resize: none;
+}
+
+.chat-submit {
+  display: flex;
+  align-items: center;
+  border: none;
+  font-size: 3rem;
+  padding: 1rem;
+  color: #333;
+  background-color: transparent;
+  border-left: 1px solid #dbdbdb;
+}
+
 @media only screen and (max-width: 46em) {
   .btn {
     align-self: flex-start;
@@ -651,39 +689,16 @@ main {
     top: 0;
     left: 0;
   }
+  .chat-submit {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
 }
 
-.chat {
-  height: 60vh;
-  width: 100%;
-  border-bottom: 1px solid #dbdbdb;
-  overflow-y: scroll;
-}
-.chat-form {
-  display: flex;
-}
-.input-group {
-  width: 100%;
-  display: flex;
-  border-bottom: 1px solid #dbdbdb;
-}
-
-.chat-input {
-  background-color: royalblue;
-  border: none;
-  background-color: transparent;
-  width: 100%;
-  padding: 0.5rem 2rem;
-  resize: none;
-}
-
-.chat-submit {
-  display: flex;
-  align-items: center;
-  border: none;
-  font-size: 3rem;
+.message {
   padding: 1rem;
-  color: #333;
-  background-color: transparent;
-  border-left: 1px solid #dbdbdb;
+  background-color: rgb(77, 122, 255);
+  color: #fff;
+  border-radius: 0.5rem;
+  align-self: flex-end;
 }
