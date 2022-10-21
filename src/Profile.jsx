@@ -173,6 +173,26 @@ export const Profile = () => {
                   {comm?.body}
                 </p>
               ))}
+              {data?.git && data?.link ? (
+                <>
+                  <a
+                    href={data.link}
+                    className="comment"
+                  >
+                    <span className="nick-small">Website:</span>
+                    {data.link}
+                  </a>
+                  <a
+                    href={data.git}
+                    className="comment"
+                  >
+                    <span className="nick-small">GitHub repo:</span>
+                    {data.git}
+                  </a>
+                </>
+              ) : (
+                ''
+              )}
               <div className="icons-modal">
                 <div className="icons ">
                   <FaRegHeart

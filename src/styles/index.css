@@ -643,6 +643,13 @@ main {
   background-color: transparent;
   border-left: 1px solid #dbdbdb;
 }
+.comment {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
 
 @media only screen and (max-width: 46em) {
   .btn {
