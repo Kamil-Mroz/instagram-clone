@@ -1,6 +1,11 @@
 import React from 'react'
 import { useFetch } from './hooks/useFetch'
 import { ColorGenerator } from './ColorGenerator'
+import countriesImg from './assets/countries-app.png'
+import expensesImg from './assets/expenses-tracker-app.png'
+import todoImg from './assets/todo-app.png'
+import notepadImg from './assets/notepad-app.png'
+import landingPageImg from './assets/landing-page.png'
 export const DataContext = React.createContext({})
 
 export const DataProvider = ({ children }) => {
@@ -10,24 +15,44 @@ export const DataProvider = ({ children }) => {
   const post = useFetch('https://jsonplaceholder.typicode.com/posts')
   const projects = [
     {
-      url: 'https://kamil-countries.netlify.app/',
+      id: 50005,
+      link: 'https://kamil-countries.netlify.app/',
       description: 'An app search for country',
-      img: './assets/countries-app.png',
+      url: countriesImg,
+      title: 'Countries app',
+      git: 'https://github.com/Kamil-Mroz/countries-FM',
     },
     {
-      url: 'https://kamil-notepad.netlify.app/',
+      id: 50004,
+      link: 'https://kamil-fm-landing-page.netlify.app/',
+      description: 'An app search for country',
+      url: landingPageImg,
+      title: 'Landing page',
+      git: 'https://github.com/Kamil-Mroz/fem-fylo-dark-theme-landing-page-master',
+    },
+    {
+      id: 50003,
+      link: 'https://kamil-notepad.netlify.app/',
       description: 'An online notepad',
-      img: './assets/notepad-app.png',
+      url: notepadImg,
+      title: 'Notepad app',
+      git: 'https://github.com/Kamil-Mroz/Notepad',
     },
     {
-      url: 'https://kamil-todo-app.netlify.app/',
-      description: 'Have a problem to track your goals write them here',
-      img: './assets/todo-app.png',
-    },
-    {
-      url: 'https://kamil-expenses-tracker.netlify.app/',
+      id: 50002,
+      link: 'https://kamil-expenses-tracker.netlify.app/',
       description: 'An app search for country',
-      img: './assets/expenses-tracker-app.png',
+      url: expensesImg,
+      title: 'Expenses tracker app',
+      git: 'https://github.com/Kamil-Mroz/Expenses-Tracker',
+    },
+    {
+      id: 50001,
+      link: 'https://kamil-todo-app.netlify.app/',
+      description: 'Have a problem to track your goals write them here',
+      url: todoImg,
+      title: 'Todo app',
+      git: 'https://github.com/Kamil-Mroz/todoApp',
     },
   ]
   const users = user?.reduce((cur, u) => {
@@ -88,6 +113,7 @@ export const DataProvider = ({ children }) => {
     postsNum: projects.length,
     followers: Math.floor(Math.random() * (1_000_000 - 200) + 200),
     follows: Math.floor(Math.random() * (300 - 50) + 50),
+    likes: Math.floor(Math.random() * (100000 - 1000) + 1000),
   })
 
   return (

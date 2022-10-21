@@ -64,7 +64,7 @@ export const Nav = () => {
           </li>
           <li className="nav-item">
             <Link
-              to="bret"
+              to="kamilpm"
               replace={true}
               className="link"
             >

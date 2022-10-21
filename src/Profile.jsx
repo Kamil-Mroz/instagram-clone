@@ -200,7 +200,7 @@ export const Profile = () => {
                 </div>
 
                 <p className="likes">
-                  Likes: {useNumbers(isLiked ? user.likes + 1 : user.likes)}
+                  Likes: {useNumbers(isLiked ? user?.likes + 1 : user?.likes)}
                 </p>
               </div>
             </article>

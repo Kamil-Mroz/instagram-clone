@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-
+import React from 'react'
 export const Post = ({ post, open }) => {
   return (
     <div
