@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect, useRef, useMemo } from 'react'
 import { DataContext } from './Data'
 import { Card } from './Card'
+
 export const Home = () => {
   const POSTS_ON_RENDER = 4
   const [amount, setAmount] = useState(POSTS_ON_RENDER)

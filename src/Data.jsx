@@ -8,7 +8,28 @@ export const DataProvider = ({ children }) => {
   const photos = useFetch('https://jsonplaceholder.typicode.com/photos')
   const comments = useFetch('https://jsonplaceholder.typicode.com/comments')
   const post = useFetch('https://jsonplaceholder.typicode.com/posts')
-  const projects = [{}, {}, {}, {}]
+  const projects = [
+    {
+      url: 'https://kamil-countries.netlify.app/',
+      description: 'An app search for country',
+      img: './assets/countries-app.png',
+    },
+    {
+      url: 'https://kamil-notepad.netlify.app/',
+      description: 'An online notepad',
+      img: './assets/notepad-app.png',
+    },
+    {
+      url: 'https://kamil-todo-app.netlify.app/',
+      description: 'Have a problem to track your goals write them here',
+      img: './assets/todo-app.png',
+    },
+    {
+      url: 'https://kamil-expenses-tracker.netlify.app/',
+      description: 'An app search for country',
+      img: './assets/expenses-tracker-app.png',
+    },
+  ]
   const users = user?.reduce((cur, u) => {
     const color = `#${ColorGenerator()}`
     return [
