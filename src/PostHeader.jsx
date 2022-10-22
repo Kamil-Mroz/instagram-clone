@@ -9,7 +9,7 @@ export const PostHeader = ({ color, username }) => {
         style={{ backgroundColor: color }}
       ></div>
       <NavLink
-        to={`/${username.toLowerCase()}`}
+        to={`/${username?.toLowerCase()}`}
         className="link"
       >
         <p className="nick-small">{username}</p>
