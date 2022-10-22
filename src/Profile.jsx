@@ -14,6 +14,7 @@ import {
   FaRegPaperPlane,
   FaBookmark,
 } from 'react-icons/fa'
+import { PostHeader } from './PostHeader'
 
 ReactModal.setAppElement('#root')
 
@@ -149,18 +150,10 @@ export const Profile = () => {
             </figure>
 
             <article className="comments">
-              <div className="header">
-                <div
-                  className="small-img-box"
-                  style={{ backgroundColor: user?.color }}
-                ></div>
-                <NavLink
-                  to={`/${user?.username?.toLowerCase()}`}
-                  className="link"
-                >
-                  <p className="nick-small">{user?.username}</p>
-                </NavLink>
-              </div>
+              <PostHeader
+                color={user?.color}
+                username={user?.username}
+              />
 
               {user?.comments?.map((comm) => (
                 <p

@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 import { useNumbers } from './hooks/useNumbers'
+import { PostHeader } from './PostHeader'
 
 export const Card = ({ post }) => {
   const [isShowMore, setIsShowMore] = useState(false)
@@ -16,18 +17,11 @@ export const Card = ({ post }) => {
   const comments = post?.comments.slice(0, isShowMore ? -1 : 1)
   return (
     <div className="card">
-      <div className="header">
-        <div
-          className="small-img-box"
-          style={{ backgroundColor: post?.userInfo?.color }}
-        ></div>
-        <NavLink
-          to={`/${post?.userInfo?.username.toLowerCase()}`}
-          className="link"
-        >
-          <p className="nick-small">{post?.userInfo?.username}</p>
-        </NavLink>
-      </div>
+      <PostHeader
+        color={post?.userInfo?.color}
+        username={post?.userInfo?.username}
+      />
+
       <div className="img-box">
         <img
           src={post?.photo?.url}
