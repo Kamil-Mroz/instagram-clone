@@ -13,6 +13,7 @@ import {
   FaRegBookmark,
   FaRegPaperPlane,
   FaBookmark,
+  FaTimes,
 } from 'react-icons/fa'
 import { PostHeader } from './PostHeader'
 
@@ -189,10 +190,19 @@ export const Profile = () => {
               <div className="icons-modal">
                 <div className="icons ">
                   <FaRegHeart
+                    tabIndex={0}
                     className={`icon-card ${isLiked && 'active'}`}
                     onClick={() => setIsLiked((prev) => !prev)}
+                    onKeyDown={(e) => {
+                      if (e.key !== 'Enter') return
+                      setIsLiked((prev) => !prev)
+                    }}
                   />
-                  <FaRegComment className="icon-card" />
+
+                  <FaRegComment
+                    tabIndex={0}
+                    className="icon-card"
+                  />
                   <NavLink
                     to={`/message/${user?.username.toLowerCase()}`}
                     className="txt-decoration-none"
@@ -201,13 +211,23 @@ export const Profile = () => {
                   </NavLink>
                   {isBooked ? (
                     <FaBookmark
+                      tabIndex={0}
                       className="icon-card"
                       onClick={() => setIsBooked((prev) => !prev)}
+                      onKeyDown={(e) => {
+                        if (e.key !== 'Enter') return
+                        setIsBooked((prev) => !prev)
+                      }}
                     />
                   ) : (
                     <FaRegBookmark
+                      tabIndex={0}
                       className="icon-card"
                       onClick={() => setIsBooked((prev) => !prev)}
+                      onKeyDown={(e) => {
+                        if (e.key !== 'Enter') return
+                        setIsBooked((prev) => !prev)
+                      }}
                     />
                   )}
                 </div>
@@ -217,6 +237,15 @@ export const Profile = () => {
                 </p>
               </div>
             </article>
+            <FaTimes
+              className="close-modal"
+              onClick={close}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key !== 'Enter') return
+                close()
+              }}
+            />
           </ReactModal>
         </>
       )}

@@ -651,6 +651,14 @@ main {
   align-items: center;
 }
 
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  color: inherit;
+}
+
 @media only screen and (max-width: 46em) {
   .btn {
     align-self: flex-start;
@@ -700,6 +708,13 @@ main {
   .chat-submit {
     font-size: 2rem;
     padding: 0.5rem;
+  }
+
+  .close-modal {
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 2rem;
+    color: inherit;
   }
 }
 

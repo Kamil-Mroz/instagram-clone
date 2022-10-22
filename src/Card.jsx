@@ -31,10 +31,18 @@ export const Card = ({ post }) => {
       <div className="card-details">
         <div className="icons">
           <FaRegHeart
+            tabIndex={0}
             className={`icon-card ${isLiked && 'active'}`}
             onClick={() => setIsLiked((prev) => !prev)}
+            onKeyDown={(e) => {
+              if (e.key !== 'Enter') return
+              setIsLiked((prev) => !prev)
+            }}
           />
-          <FaRegComment className="icon-card" />
+          <FaRegComment
+            tabIndex={0}
+            className="icon-card"
+          />
           <NavLink
             to={`/message/${post?.userInfo?.username.toLowerCase()}`}
             className="txt-decoration-none"
@@ -43,12 +51,22 @@ export const Card = ({ post }) => {
           </NavLink>
           {isBooked ? (
             <FaBookmark
+              tabIndex={0}
               className="icon-card"
               onClick={() => setIsBooked((prev) => !prev)}
+              onKeyDown={(e) => {
+                if (e.key !== 'Enter') return
+                setIsBooked((prev) => !prev)
+              }}
             />
           ) : (
             <FaRegBookmark
+              tabIndex={0}
               className="icon-card"
+              onKeyDown={(e) => {
+                if (e.key !== 'Enter') return
+                setIsBooked((prev) => !prev)
+              }}
               onClick={() => setIsBooked((prev) => !prev)}
             />
           )}
