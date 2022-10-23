@@ -21,7 +21,7 @@ export const Chat = () => {
   }, [id])
 
   const onSubmit = (e) => {
-    e.preventDefault()
+    e?.preventDefault()
 
     const value = inputRef.current.value
     if (!value) return
@@ -61,6 +61,10 @@ export const Chat = () => {
             className="chat-input"
             ref={inputRef}
             rows={1}
+            onKeyDown={(e) => {
+              if (e.key !== 'Enter') return
+              onSubmit(e)
+            }}
           ></textarea>
           <button className="chat-submit">
             <FaRegPaperPlane />
