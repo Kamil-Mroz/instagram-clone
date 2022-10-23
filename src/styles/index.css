@@ -558,7 +558,7 @@ main {
   left: 50%;
   translate: -50% -50%;
   display: grid;
-  grid-template-columns: minmax(30rem, 1fr) minmax(35rem, 50rem);
+  grid-template-columns: minmax(33rem, 1fr) minmax(35rem, 50rem);
   border-radius: 0.5rem;
 }
 .overlay {
@@ -715,6 +715,7 @@ main {
   }
   .comments {
     overflow-y: hidden;
+    padding-top: 1rem;
   }
   .profile-box,
   .search {

@@ -17,7 +17,7 @@ export const DataProvider = ({ children }) => {
     {
       id: 50005,
       link: 'https://kamil-countries.netlify.app/',
-      description: 'An app search for country',
+      description: 'An app with countries details',
       url: countriesImg,
       title: 'Countries app',
       git: 'https://github.com/Kamil-Mroz/countries-FM',
@@ -41,7 +41,7 @@ export const DataProvider = ({ children }) => {
     {
       id: 50002,
       link: 'https://kamil-expenses-tracker.netlify.app/',
-      description: 'An app search for country',
+      description: 'A place where you can track your expenses',
       url: expensesImg,
       title: 'Expenses tracker app',
       git: 'https://github.com/Kamil-Mroz/Expenses-Tracker',
