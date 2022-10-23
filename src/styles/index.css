@@ -480,6 +480,7 @@ main {
 /* ! message */
 
 .message-container {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 2fr;
   background-color: #fff;
@@ -505,6 +506,9 @@ main {
 .users-block {
   height: 90vh;
   overflow-y: scroll;
+}
+.show-users {
+  display: none;
 }
 
 .message-block {
@@ -660,6 +664,16 @@ main {
 }
 
 @media only screen and (max-width: 46em) {
+  .show-users {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    padding: 1rem;
+    font-size: 5rem;
+    z-index: 2;
+    color: inherit;
+  }
   .btn {
     align-self: flex-start;
     padding-block: 1rem;
@@ -669,11 +683,18 @@ main {
     align-items: flex-start;
   }
   .message-container {
+    isolation: isolate;
     grid-template-columns: min-content 1fr;
+  }
+  .message-container.grid-one-col {
+    grid-template-columns: 1fr;
   }
   .users-block {
     height: 85vh;
     overflow-y: scroll;
+  }
+  .users-block.display-none {
+    display: none;
   }
 
   .link--message {
@@ -706,7 +727,7 @@ main {
     left: 0;
   }
   .chat-submit {
-    font-size: 2rem;
+    font-size: 3rem;
     padding: 0.5rem;
   }
 
