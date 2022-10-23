@@ -9,7 +9,6 @@ export const Message = () => {
   const [isClosed, setIsClosed] = useState(false)
 
   const location = useLocation()
-  console.log(location)
   useEffect(() => {
     if (location.pathname === '/message' && isClosed !== false)
       setIsClosed(false)
@@ -22,7 +21,6 @@ export const Message = () => {
     setIsClosed(false)
   }
 
-  console.log(isClosed)
   return (
     <div className={`message-container ${isClosed ? 'grid-one-col' : ''}`}>
       <div className={`users-block ${isClosed ? 'display-none' : ''}`}>

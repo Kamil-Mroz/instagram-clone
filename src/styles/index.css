@@ -658,7 +658,7 @@ main {
 .close-modal {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  right: 2.5rem;
   font-size: 3rem;
   color: inherit;
 }
