@@ -6,6 +6,8 @@ import expensesImg from './assets/expenses-tracker-app.png'
 import todoImg from './assets/todo-app.png'
 import notepadImg from './assets/notepad-app.png'
 import landingPageImg from './assets/landing-page.png'
+import { setCookie } from './hooks/setCookie'
+
 export const DataContext = React.createContext({})
 
 export const DataProvider = ({ children }) => {
@@ -13,6 +15,11 @@ export const DataProvider = ({ children }) => {
   const photos = useFetch('https://jsonplaceholder.typicode.com/photos')
   const comments = useFetch('https://jsonplaceholder.typicode.com/comments')
   const post = useFetch('https://jsonplaceholder.typicode.com/posts')
+
+  setCookie('users', JSON.stringify(user))
+  setCookie('photos', JSON.stringify(photos))
+  setCookie('comments', JSON.stringify(comments))
+
   const projects = [
     {
       id: 50005,

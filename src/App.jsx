@@ -3,12 +3,14 @@ import { Routes, Route } from 'react-router-dom'
 import { Chat } from './Chat'
 import { DataProvider } from './Data'
 import { Home } from './Home'
+
 import { Message } from './Message'
 
 import { Nav } from './Nav'
 import { NotFound } from './NotFound'
 import { Profile } from './Profile'
 import { Search } from './Search'
+
 function App() {
   window.scrollTo(0, 0)
 
