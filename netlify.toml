@@ -1,4 +1,4 @@
 [[redirects]]
   from ="/*"
-  to = "/notfound"
+  to = "/index.html"
   status = 200
