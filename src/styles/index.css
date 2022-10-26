@@ -360,22 +360,6 @@ main {
   height: 100vh;
 }
 
-@media only screen and (max-width: 80em) {
-  .text-link {
-    display: none;
-  }
-  .icon-hide {
-    display: block;
-  }
-  .sidebar {
-    width: max-content;
-    padding: 0.8rem 1.5rem 2rem;
-  }
-  .box {
-    width: 7.5rem;
-    height: 100vh;
-  }
-}
 @media only screen and (max-width: 48em) {
   .profile-img {
     justify-content: flex-start;
@@ -558,7 +542,7 @@ main {
   left: 50%;
   translate: -50% -50%;
   display: grid;
-  grid-template-columns: minmax(33rem, 1fr) minmax(35rem, 50rem);
+  grid-template-columns: minmax(30rem, 1fr) minmax(32rem, 50rem);
   border-radius: 0.5rem;
 }
 .overlay {
@@ -590,7 +574,7 @@ main {
   padding: 0 2rem 2rem 2rem;
 }
 .comments > .header {
-  top: 1px;
+  top: 0;
   position: sticky;
   border-bottom: 1px solid #dbdbdb;
   background-color: #fff;
@@ -650,9 +634,9 @@ main {
 .comment {
   text-decoration: none;
   color: inherit;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+}
+.comment > * {
+  margin-right: 0.5rem;
 }
 
 .close-modal {
@@ -661,6 +645,25 @@ main {
   right: 2.5rem;
   font-size: 3rem;
   color: inherit;
+}
+@media only screen and (max-width: 80em) {
+  .text-link {
+    display: none;
+  }
+  .icon-hide {
+    display: block;
+  }
+  .sidebar {
+    width: max-content;
+    padding: 0.8rem 1.5rem 2rem;
+  }
+  .box {
+    width: 7.5rem;
+    height: 100vh;
+  }
+  .comments {
+    padding: 0 2rem 2rem 1rem;
+  }
 }
 
 @media only screen and (max-width: 46em) {
@@ -737,6 +740,9 @@ main {
     right: 2.5rem;
     font-size: 2rem;
     color: inherit;
+  }
+  .icons-modal {
+    left: 0;
   }
 }
 
